@@ -23,6 +23,11 @@ CREATE TABLE takim (
  
  select*from books;
  
+ -- bu bir yorum satırıdır.
+ /*
+ birden fazla satır yazacagın zaman kullan.
+ */
+ 
  
 
 
