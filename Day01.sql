@@ -74,6 +74,77 @@ select isim,soyisim from kisiler where sehir='bursa';
  */
  
  select isim,soyisim from kisiler;
+ 
+ -- ===================================================================================================================================
+ 
+ /*  
+========================  SORU-2 ========================
+ Kisiler tablosundaki sehir= antalya olan kisileri listeleyiniz.
+=========================================================
+ */
+ 
+ select * from kisiler where sehir='antalya';
+ 
+ /*
+ ========================  SORU-3 ========================
+    Kisiler tablosundaki yasi 22 olan kisileri listeleyiniz.
+ =========================================================
+ */
+ 
+ select * from kisiler where yas=22;
+ 
+ /*
+ ========================  SORU-4 ========================
+    Kisiler tablosundaki sehri Ankara olanlarin yas, isim ve soyisim
+    bilgilerini listeleyiniz.
+ =========================================================
+ */
+ 
+ select yas,isim,soyisim from kisiler where sehir='ankara';
+ 
+ /*
+========================  SORU-5 ========================
+    Kisiler tablosundaki yasi 30 `dan buyuk olan kisilerin
+    bilgilerini listeleyiniz.
+=========================================================
+ */
+ 
+ select * from kisiler where yas > 30;
+ 
+ /*
+========================  SORU-6 ========================
+    Kisiler tablosundaki ismi 'emre' den buyuk olan kisilerin
+    isimlerini listeleyiniz.
+=========================================================
+ */
+ 
+ select isim from kisiler where isim > 'Emre';
+ 
+ /*
+========================  SORU-7 ========================
+    Kisiler tablosundaki sehri 'D' den buyuk olan sehirlerde
+    yasayan kisileri isim ve soyisim  bilgilerini listeleyiniz.
+=========================================================
+ */
+ 
+ select isim,soyisim from kisiler where sehir > 'D';
+ 
+ /*
+ ========================  SORU-8 ========================
+    Kisiler tablosundaki yasi 35 den kucuk veya esit olan kisilerin
+    bilgilerini listeleyiniz.
+ =========================================================
+ */
+ 
+ select * from kisiler where yas <= 35;
+ 
+ /*  
+ ========================  SORU-9 ========================
+    Kisiler tablosundaki sehri Trabzon olmayan kisilerin
+    bilgilerini listeleyiniz.
+ =========================================================
+ */
+ 
 
  
 
