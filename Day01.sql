@@ -145,6 +145,33 @@ select isim,soyisim from kisiler where sehir='bursa';
  =========================================================
  */
  
+ select * from kisiler where sehir != 'Trabzon';
+ select * from kisiler where sehir <> 'Trabzon';
+ 
+ /*
+========================  SORU-10 ========================
+ Kisiler tablosundan 29 yaşından büyük olan ve Ankara'da yaşayan kişileri listeleyiniz.
+=========================================================
+ */
+ 
+ select * from kisiler where yas > 29 and sehir = 'ankara';
+ 
+ /*
+========================  SORU-11 ========================
+ Kisiler tablosundan Adı 'Fatma' olan ve Bursa'da yaşayan kişilerin yasini listeleyiniz.
+=========================================================
+ */
+ 
+ select yas from kisiler where isim='Fatma' and sehir='Bursa';
+ 
+ /*
+========================  SORU-12 ========================
+ Kisiler tablosundan ismi 'Ayse' ve soyismi 'Kaya' olan kişileri listeleyiniz.
+=========================================================
+ */
+ 
+ select * from kisiler where isim='Ayşe' and soyisim='Kaya';
+ 
 
  
 
