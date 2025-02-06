@@ -67,6 +67,8 @@ INSERT INTO kisiler () VALUES ('Seda', 'Aydın', 28, 'Eskişehir');
 select * from kisiler;
 select isim,soyisim from kisiler where sehir='bursa';
 
+-- ===================================================================================================================================
+
 /*
 ========================  SORU-1 ========================
  Kisiler tablosundan isim ve soy isim bilgilerini listeleyiniz.
@@ -74,8 +76,6 @@ select isim,soyisim from kisiler where sehir='bursa';
  */
  
  select isim,soyisim from kisiler;
- 
- -- ===================================================================================================================================
  
  /*  
 ========================  SORU-2 ========================
@@ -172,8 +172,87 @@ select isim,soyisim from kisiler where sehir='bursa';
  
  select * from kisiler where isim='Ayşe' and soyisim='Kaya';
  
-
+ /*  
+ ========================  SORU-13 ========================
+ Kisiler tablosundan yaşı 25 ile 35 arasında olan kişileri listeleyiniz.
+ =========================================================
+ */
  
+ select * from kisiler where yas between 25 and 35;
+ 
+ /*
+========================  SORU-14 ========================
+ Kisiler tablosundan yaşı 25 ile 35 arasında olan ve Ankara'da yaşayan kişileri listeleyiniz.
+=========================================================
+ */
+ 
+ select * from kisiler where yas between 25 and 35 and sehir='ankara';
+ 
+ /*  
+========================  SORU-15 ========================
+ Kisiler tablosundan yaşı 22 veya 35 olan kişileri listeleyiniz.
+=========================================================
+ */
+ 
+ select * from kisiler where yas=22 or yas=35;
+ 
+ /*
+========================  SORU-16 ========================
+ Kisiler tablosundan 29 yaşından büyük olan veya Ankara'da yaşayan kişileri listeleyiniz.
+=========================================================
+ */
+ 
+ select * from kisiler where yas>29 or sehir='ankara';
+ 
+ /*
+========================  SORU-17 ========================
+ Kisiler tablosundan İstanbul, Ankara veya İzmir'de yaşayan kişileri listeleyiniz.
+=========================================================
+ */
+ 
+ select * from kisiler where sehir='ankara' or sehir='istanbul' or sehir='izmir';
+ 
+ /*  
+========================  SORU-18 ========================
+ Kisiler tablosundan İstanbul, Ankara veya İzmir'de yaşayan kişileri listeleyiniz.
+=========================================================
+ */
+ 
+ select * from kisiler where sehir IN ('ankara','istanbul','izmir');
+ 
+ /*
+========================  SORU-19 ========================
+    Kisiler tablosundan adı 'Ahmet', 'Mehmet' veya 'Ayşe' olan kişileri listeleyiniz.
+=========================================================
+ */
+ 
+ select * from kisiler where isim IN ('ahmet','mehmet','ayşe');
+ 
+ /*  
+========================  SORU-20 ========================
+ Kisiler tablosundan  İstanbul'da yaşamayan kişileri listeleyiniz.
+=========================================================
+ */
+ 
+ select * from kisiler where not sehir='istanbul';
+ 
+ /*  
+========================  SORU-21 ========================
+ Kisiler tablosundan  İstanbul, Izmir veya Ankara'da yaşamayan kişileri listeleyiniz.
+=========================================================
+ */
+
+ select * from kisiler where not sehir IN ('istanbul','izmir','ankara');
+ 
+ /*
+========================  SORU-22 ========================
+ Kisiler tablosundan 30 yaşından büyük olmayan kişileri listeleyiniz.
+=========================================================
+ */
+ 
+ select * from kisiler where not yas > 30;
+ 
+ -- =================================================================================================================================== 
 
 								                                 
 
