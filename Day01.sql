@@ -253,7 +253,199 @@ select isim,soyisim from kisiler where sehir='bursa';
  select * from kisiler where not yas > 30;
  
  -- =================================================================================================================================== 
+ 
+ create table maaslar(
+ id char(5),
+ isim varchar(50),
+ maas int
+ );
+ 
+INSERT INTO maaslar VALUES('10001','Ahmet Aslan',7000);
+INSERT INTO maaslar VALUES('10002','Mehmet Yilmaz',12000);
+INSERT INTO maaslar VALUES('10003','Meryem',7215);
+INSERT INTO maaslar VALUES('10004','Veli Han',5000);
+INSERT INTO maaslar VALUES('10005','Mustafa Ali',5500);
+INSERT INTO maaslar VALUES('10006','Ayse Can',5600);
+INSERT INTO maaslar VALUES('10010','Ayse',4700);
+INSERT INTO maaslar VALUES('10009','Ayse Cemile',4000);
+INSERT INTO maaslar VALUES('10008','Ayse Fatma',4300);
+INSERT INTO maaslar VALUES('10007','Beyza Ayse',7700);
+INSERT INTO maaslar VALUES('10011','Yeliz Alina',12700);
 
+select * from maaslar;
+
+-- ismi Ayse olan kisinin maasını yazdırın
+select maas from maaslar where isim='ayşe';
+
+/*  
+=============================  SORU-1 =============================
+    Personel tablosundan dort harfli personeli listeleyiniz.
+===================================================================
+ */
+ 
+ select * from maaslar where isim LIKE '____';
+ select * from maaslar where isim LIKE '____ ___';
+ 
+ /*  
+=============================  SORU-2 =============================
+    Personel tablosundan isminde a bulunan personeli listeleyiniz.
+===================================================================
+ */
+
+select * from maaslar where isim LIKE '%a%';
+
+/*  
+=============================  SORU-3 =============================
+    Personel tablosundan ismi Ayse olan personeli listeleyiniz.
+===================================================================
+ */
+ 
+ select * from maaslar where isim LIKE '%ayse%';
+ 
+ /*  
+=============================  SORU-4 =============================
+    Personel tablosundan ismi 'a' ile biten personeli listeleyiniz.
+===================================================================
+ */
+ 
+ select * from maaslar where isim LIKE '%a';
+ 
+ /*
+=============================  SORU-5 =============================
+    Personel tablosundan isminin 2. harfi 'e' olan personeli listeleyiniz
+===================================================================
+ */
+ 
+ select * from maaslar where isim LIKE '_e%';
+ 
+ /*
+=============================  SORU-6 =============================
+    Personel tablosundan Isminin 2. harfi 'e' olup diger harflerinde 'y'
+    olan personeli listeleyiniz
+===================================================================
+ */
+ 
+ select * from maaslar where isim LIKE '_e%' and isim LIKE '%y%';
+ 
+ /*
+=============================  SORU-7 =============================
+    Personel tablosundan maasi 5 haneli olan personel isimlerini listeleyiniz
+===================================================================
+ */
+ 
+ select isim from maaslar where maas LIKE '_____';
+ 
+ /*
+=============================  SORU-8 =============================
+    Personel tablosundan isminin 1. harfi 'a' ve 7. harfi 'a' olan
+    personeli listeleyiniz
+===================================================================
+ */
+ 
+ select * from maaslar where isim LIKE 'a_____a%';
+ 
+ CREATE TABLE kelimeler
+    (
+        id int UNIQUE,
+        kelime VARCHAR(50),
+        harf_sayisi int
+    );
+    
+    INSERT INTO kelimeler VALUES 
+    (1001, 'hot', 3),
+    (1002, 'hat', 3),
+    (1003, 'hit', 3),
+    (1004, 'hbt', 3),
+    (1005, 'hct', 3),
+    (1006, 'adem', 4),
+    (1007, 'selim', 5),
+    (1008, 'yusuf', 5),
+    (1009, 'hip', 3),
+    (1010, 'HOT', 3),
+    (1011, 'hOt', 3),
+    (1012, 'h9t', 3),
+    (1013, 'hoot', 4),
+    (1014, 'haaat', 5),
+    (1015, 'hooooot', 7),
+    (1016, 'h-t', 3),
+    (1017, 'h?t', 3),
+    (1018, 'hOOOt', 5),
+    (1019, 'O', 1);
+    
+    SELECT * FROM kelimeler;
+    
+    /*  
+=============================  SORU-9 =============================
+    Kelimeler tablosundan icerisinde 'ot' veya 'at' bulunan kelimeleri
+    listeleyiniz
+===================================================================
+ */
+ 
+ select * from kelimeler where kelime LIKE '%ot%' or kelime LIKE '%at%';
+ select * from kelimeler where regexp_like (kelime,'ot|at');
+ 
+ /*  
+=============================  SORU-10 =============================
+    Kelimeler tablosundan icerisinde 'ot' veya 'at' bulunan kelimeleri
+    case-sensitive'e dikkat ederek listeleyiniz.
+===================================================================
+ */
+ 
+ select * from kelimeler where regexp_like (kelime,'ot|at','c');
+ select * from kelimeler where regexp_like (kelime,'ot|at','i'); -- önemli değilken
+ 
+  /*
+=============================  SORU-11 =============================
+    Kelimeler tablosundan sonu 't' veya 'm' ile bitenleri
+    case-sensitive'e dikkat etmeksizin listeleyiniz.
+===================================================================
+ */
+ 
+ select * from kelimeler where regexp_like (kelime,'t$|m$','i');
+ 
+ /*  
+=============================  SORU-12 =============================
+    Kelimeler tablosundan h ile baslayip t ile biten 3 harfli kelimeleri 
+    (h ile t kucuk harfli olanlari) listeleyiniz.
+===================================================================
+ */
+ 
+ SELECT kelime FROM kelimeler 
+ WHERE REGEXP_LIKE (kelime,'^h.t$','c');
+ 
+ /*  
+=============================  SORU-13 =============================
+    Kelimeler tablosundan 'h' ile baslayip 't' ile biten 2. karakteri rakam 
+    olan 3 harfli kelimeleri (h ile t kucuk harfli olanlari) listeleyiniz
+===================================================================
+ */
+ 
+ SELECT kelime FROM kelimeler 
+ WHERE REGEXP_LIKE (kelime,'^h[0-9]t$','c');
+ 
+ /*  
+=============================  SORU-14 =============================
+    Kelimeler tablosundan 'h' ile baslayip 't' ile biten 2. karakteri buyuk 
+    harf olan 3 harfli kelimeleri (h ile t kucuk harfli olanlari) listeleyiniz
+===================================================================
+ */
+ 
+ SELECT kelime FROM kelimeler 
+ WHERE REGEXP_LIKE (kelime,'^h[A-Z]t$','c');
+ 
+ /*  
+=============================  SORU-15 =============================
+    Kelimeler tablosundan 2. harfi 'O' (buyuk O harfli) olan 3 karakterli 
+    kelimeleri ve id'lerini listeleyiniz
+===================================================================
+ */
+ 
+ SELECT id,kelime FROM kelimeler 
+ WHERE REGEXP_LIKE (kelime,'^.O.$','c');
+ 
+ 
+ 
+ 
 								                                 
 
 
