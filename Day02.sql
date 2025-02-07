@@ -119,4 +119,66 @@ ORDER BY yayin_yili;
 SELECT kitap_adi,yayin_yili FROM kitaplik
 ORDER BY yayin_yili DESC;
 
+/*
+============================= SORU-3 =============================
+    Kitaplik tablosundaki "Fyodor Dostoyevski"nin kitaplarını yayın
+    yılına göre eskiden gunumuze sıralayiniz.
+===================================================================
+*/
+
+SELECT kitap_adi,yayin_yili FROM kitaplik
+WHERE yazar='Fyodor Dostoyevski'
+ORDER BY yayin_yili;
+
+/*
+============================= SORU-4 =============================
+    Kitaplik tablosundaki yazarlarin isimlerini ters siralayiniz.
+===================================================================
+*/
+
+SELECT yazar FROM kitaplik
+ORDER BY yazar DESC;
+
+/*
+============================= SORU-5 =============================
+    Kitaplik tablosundaki ismi K harfi ile T harfi arasında olan yazarlarin isimlerini ters siralayiniz.
+===================================================================
+*/
+
+SELECT yazar FROM kitaplik
+WHERE yazar BETWEEN 'K' AND 'T'
+ORDER BY yazar DESC;
+
+/*
+============================= SORU-6 =============================
+    Kitaplik tablosundaki "Lev Tolstoy" un kitaplarını isimlerine
+    göre dogal sırayiniz.
+===================================================================
+*/
+
+SELECT kitap_adi FROM kitaplik
+WHERE yazar='Lev Tolstoy'
+ORDER BY kitap_adi;
+
+/*
+============================= SORU-7 =============================
+    Kitaplik tablosundaki yazar isimlerini ve kitaplarini
+    dogal sıralayiniz.
+===================================================================
+*/
+
+SELECT yazar,kitap_adi FROM kitaplik
+ORDER BY yazar,kitap_adi;
+
+/*
+============================= SORU-8 =============================
+    Kitaplik tablosundaki kitaplari yayin yilina gore gunumuzden eskiye
+    ve yazar isimlerini dogal sıralayiniz.
+===================================================================
+*/
+
+SELECT yazar,yayin_yili,kitap_adi FROM kitaplik
+ORDER BY yayin_yili DESC, yazar ASC;
+
+-- ================================================================================================
 
