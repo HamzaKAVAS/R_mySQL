@@ -14,3 +14,11 @@ SELECT kelime FROM kelimeler WHERE harf_sayisi BETWEEN 2 AND 4;
 
 -- 2.harfi o olan kelimeleri listeleyin
 SELECT kelime FROM kelimeler WHERE kelime LIKE '_o%';
+
+-- ikinci harfi o olan ve uzunluğu 3 olan kelimeleri listeleyin
+SELECT kelime FROM kelimeler WHERE kelime LIKE '_o%' AND harf_sayisi=3;
+SELECT kelime FROM kelimeler WHERE kelime LIKE '_o_';
+SELECT kelime FROM kelimeler WHERE REGEXP_LIKE (kelime,'^.o.$');
+
+-- ilk harfi h olup kelime uzunluğu 3'den fazla olan kelimeleri listeleyin
+SELECT kelime FROM kelimeler WHERE kelime LIKE 'h%' AND harf_sayisi>3;
