@@ -468,6 +468,9 @@ SELECT * FROM insanlar;
 SELECT isim FROM insanlar
 WHERE isim LIKE '____';
 
+SELECT * FROM insanlar
+WHERE goz_renk='Ela';
+
                        
 
  
