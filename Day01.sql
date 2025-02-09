@@ -453,6 +453,15 @@ soyisim VARCHAR(40),
 goz_renk VARCHAR(40),
 yas INT
 );
+
+INSERT INTO insanlar VALUES (1,'Enes','Yayla','Ela',25),
+                            (2,'Leyla','Koru','Ela',23),
+                            (3,'Hayri','Koru','Siyah',24),
+                            (4,'Fatih','Mert','Kahverengi',30),
+                            (5,'Ali','Türk','Yeşil',30),
+                            (6,'Fuat','Kemal','Sarı',30);
+                       
+
  
  
 								                                 
