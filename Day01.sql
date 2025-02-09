@@ -443,7 +443,9 @@ select * from maaslar where isim LIKE '%a%';
  SELECT id,kelime FROM kelimeler 
  WHERE REGEXP_LIKE (kelime,'^.O.$','c');
  
- 
+-- =================================================================================================================================== 
+use hamzadeneme;
+
  
  
 								                                 
