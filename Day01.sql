@@ -460,6 +460,14 @@ INSERT INTO insanlar VALUES (1,'Enes','Yayla','Ela',25),
                             (4,'Fatih','Mert','Kahverengi',30),
                             (5,'Ali','Türk','Yeşil',30),
                             (6,'Fuat','Kemal','Sarı',30);
+                            
+SELECT * FROM insanlar;
+
+-- insanlar tablosundan dört harfli insanları listeleyin.
+
+SELECT isim FROM insanlar
+WHERE isim LIKE '____';
+
                        
 
  
