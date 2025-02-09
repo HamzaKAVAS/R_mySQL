@@ -446,6 +446,13 @@ select * from maaslar where isim LIKE '%a%';
 -- =================================================================================================================================== 
 use hamzadeneme;
 
+CREATE TABLE insanlar(
+id INT,
+isim VARCHAR(40),
+soyisim VARCHAR(40),
+goz_renk VARCHAR(40),
+yas INT
+);
  
  
 								                                 
