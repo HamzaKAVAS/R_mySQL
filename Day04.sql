@@ -115,6 +115,123 @@ GROUP BY urun_adi;
 SELECT kategori, MAX(satis_fiyati) AS Her_bir_kategorideki_en_yüksek_birim_fiyat FROM manav
 GROUP BY kategori;
 
+-- =================================================================================================================================================================
+
+/*------------------------------- Q1 -------------------------------
+    "sehirler" isimli bir tablo olusturun.
+    Tabloda "alan_kodu", "isim", "nufus" fieldlari olsun.
+    "isim" field'i bos birakilamasin.
+    1. yolu kullanarak "alan_kodu" field'ini primary key yapin
+ -------------------------------------------------------------------*/
+ 
+CREATE TABLE sehirler(
+alan_kodu CHAR(4) PRIMARY KEY,
+isim VARCHAR(40) NOT NULL,
+nufus INT
+);
+
+/*
+------------------------------- Q2 -------------------------------
+	"ogretmenler" isimli bir table olusturun.
+	Tabloda "id", "isim", "brans", "cinsiyet" fieldlari olsun.
+	"id" field'i tekrarli veri kabul etmesin.
+	2. yolu kullanarak "id" ve "isim" field'larini primary key yapin
+-------------------------------------------------------------------
+*/
+
+CREATE TABLE ogretmenler(
+id INT UNIQUE,
+isim VARCHAR(40),
+brans VARCHAR(40),
+cinsiyet CHAR(4),
+CONSTRAINT id_pk PRIMARY KEY (id,isim) 
+);
+
+/*
+------------------------------- Q3 -------------------------------
+	"universite_ogrenci_bilgi_sistemi" isimli bir table olusturun.
+	Tabloda "giris_yili", "giris_siralamasi", "isim", "bolum" field'lari olsun.
+	"isim" field'i NULL deger kabul etmesin.
+	2. yolu kullanarak "giris_yili" ve "giris_siralamasi" field'larini
+    primary key yapin
+-------------------------------------------------------------------
+*/
+
+CREATE TABLE universite_ogrenci_bilgi_sistemi(
+giris_yili YEAR,
+giris_siralamasi INT,
+isim VARCHAR(40) NOT NULL,
+bolum VARCHAR(40),
+CONSTRAINT pk_giris_yili_ve_giris_siralamasi PRIMARY KEY (giris_yili,giris_siralamasi)
+);
+
+SELECT * FROM universite_ogrenci_bilgi_sistemi;
+
+/*------------------------------- Q4 -------------------------------
+    "tedarikci" isimli bir tablo olusturun.
+    Tabloda "tedarikci_id", "tedarikci_ismi", "iletisim_isim" fieldlari olsun.
+    "tedarikci_id" field'ini PRIMARY KEY olsun.
+    
+    "urunler" isminde baska bir tablo olusturun. 
+    Tabloda "tedarikci_id" ve "urun_id" field'lari olsun.
+    "tedarikci_id" FOREIGN KEY olsun.
+-------------------------------------------------------------------*/
+
+CREATE TABLE tedarikci(
+tedarikci_id CHAR(6) PRIMARY KEY,
+tedarikci_ismi VARCHAR(40),
+iletisim_isim VARCHAR(40)
+);
+
+CREATE TABLE urunler(
+tedarikci_id CHAR(6),
+urun_id CHAR(10),
+CONSTRAINT tedarikci_foreignKey
+FOREIGN KEY(tedarikci_id)
+REFERENCES tedarikci (tedarikci_id)
+);
+
+/*
+ ------------------------------- Q5 -------------------------------
+	"bebeler" isimli bir tablo olusturun.
+	Tabloda "id", "isim", "iletisim_no" field'lari olsun.
+	"id" field'i PRIMARY KEY olsun.
+
+	"notlar" isminde baska bir tablo olusturun. 
+	Tabloda "bebe_id" ve "puan" field'lari olsun.
+	"bebe_id" FOREIGN KEY olsun.
+-------------------------------------------------------------------
+*/
+
+CREATE TABLE bebeler(
+id INT PRIMARY KEY,
+isim VARCHAR(40),
+iletisim_no INT
+);
+
+CREATE TABLE notlar(
+id INT,
+puan INT,
+CONSTRAINT bebeler_foreignKey
+FOREIGN KEY (id)
+REFERENCES bebeler (id)
+);
+
+ /*
+ ------------------------------- Q6 -------------------------------
+"ogrenciler" ve "dersler" isimli iki tablo oluşturun.
+
+"ogrenciler" tablosunda "ogrenci_no" (Primary Key),
+"isim", ve "bolum" alanları olsun.
+
+"dersler" tablosunda "ders_kodu" (Primary Key),
+"ders_adi", ve "kredi" alanları olsun.
+
+"ogrenci_dersleri" isimli bir many to many ilişki tablosu
+oluşturun ve gerekli Foreign Key'leri tanımlayın.
+-------------------------------------------------------------------
+*/ 
+
 
 
 
