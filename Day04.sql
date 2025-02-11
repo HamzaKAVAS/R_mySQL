@@ -43,6 +43,21 @@ SELECT DISTINCT urun_adi FROM manav;
 SELECT urun_adi, SUM(miktar_kg) AS urunlerin_toplam_satis_miktari_kg FROM manav
 GROUP BY urun_adi; 
 
+/*
+=============================  SORU-1 =============================
+    Manav tablosundaki her bir kategori icin toplam gelir nedir?
+===================================================================
+*/
+
+SELECT kategori, SUM(miktar_kg * satis_fiyati) AS her_bir_kategorinin_toplam_geliri FROM manav
+GROUP BY kategori;
+
+
+
+
+
+
+
 
 
 
