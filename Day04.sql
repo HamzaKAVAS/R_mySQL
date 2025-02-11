@@ -52,6 +52,72 @@ GROUP BY urun_adi;
 SELECT kategori, SUM(miktar_kg * satis_fiyati) AS her_bir_kategorinin_toplam_geliri FROM manav
 GROUP BY kategori;
 
+/*
+=============================  SORU-2 =============================
+    Manav tablosundaki en cok satilan urun nedir?
+===================================================================
+*/
+
+SELECT urun_adi,miktar_kg AS En_çok_satılan_ürün FROM manav
+ORDER BY miktar_kg DESC
+LIMIT 1;
+
+-- veya
+
+SELECT urun_adi, MAX( miktar_kg ) AS urunlerin_toplam_satis_miktari_kg FROM manav 
+GROUP BY urun_adi
+ORDER BY urunlerin_toplam_satis_miktari_kg DESC
+LIMIT 1;
+
+/*
+=============================  SORU-3 =============================
+    Manav tablosundaki her bir gun icin ortalama birim fiyati nedir?
+===================================================================
+*/
+
+SELECT satis_tarihi, AVG(satis_fiyati) AS ortalama_birim_fiyatı FROM manav
+GROUP BY satis_tarihi;
+
+/*
+=============================  SORU-4 =============================
+    Manav tablosundaki satilan en pahali urunun bilgileri nelerdir?
+===================================================================
+*/
+
+SELECT * FROM manav
+ORDER BY satis_fiyati DESC
+LIMIT 1;
+
+/*
+=============================  SORU-5 =============================
+    Manav tablosunda bulunan meyve kategorisindeki urunlerin toplam satis miktari nedir?
+===================================================================
+*/
+
+SELECT SUM(miktar_kg) AS meyve_toplam_satis_kg FROM manav
+WHERE kategori='Meyve';
+
+/*
+=============================  SORU-6 =============================
+    Manav tablosundaki her urun icin ortalama satis fiyati nedir?
+===================================================================
+*/
+
+SELECT urun_adi, AVG(satis_fiyati) AS ortalama_satış_fiyatı FROM manav
+GROUP BY urun_adi;
+
+/*
+=============================  SORU-09 =============================
+    Manav tablosundaki her bir kategorideki en yüksek birim fiyat nedir?
+===================================================================
+*/
+
+SELECT kategori, MAX(satis_fiyati) AS Her_bir_kategorideki_en_yüksek_birim_fiyat FROM manav
+GROUP BY kategori;
+
+
+
+
 
 
 
