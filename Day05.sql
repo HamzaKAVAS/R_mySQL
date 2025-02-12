@@ -30,6 +30,60 @@ INSERT INTO sirketler VALUES(103, 'Toyota', 21000);
 SELECT * FROM calisanlar;
 SELECT * FROM sirketler;
 
+-- Honda'da çalışan personelin isimlerini listeleyin
+SELECT isim FROM calisanlar 
+WHERE sirket = 'Honda';
+
+-- Calısan sayısı 15000'den fazla olan şirket isimlerini listeleyin
+SELECT sirket FROM sirketler
+WHERE calisanlar_sayisi > 15000;
+
+-- Ford ve Toyota'da calısan personelin isimlerini listeleyin
+SELECT isim FROM calisanlar
+WHERE sirket IN ('Ford','Toyota');
+
+-- Calısan sayısı 15000'den fazla olan sirketlerde 
+-- Çalısan personelin isimlerini listeleyin.
+SELECT isim FROM calisanlar
+WHERE sirket IN ( SELECT sirket FROM sirketler WHERE calisanlar_sayisi > 15000 );
+
+-- Sirket ID'si 100 olan şirkette
+-- çalısan personel isimlerini listeleyin.
+SELECT isim FROM calisanlar
+WHERE sirket = ( SELECT sirket FROM sirketler WHERE sirket_id = 100 );
+
+/*
+----------------------------------------------------------------
+  1) Veli Yilmaz isimli personelin calistigi sirketlerin sirket
+  ismini ve personel sayilarini listeleyiniz.
+----------------------------------------------------------------
+*/
+SELECT sirket,calisanlar_sayisi FROM sirketler
+WHERE sirket IN ( SELECT sirket FROM calisanlar WHERE isim = 'Veli Yilmaz' );
+
+/*
+ ----------------------------------------------------------------
+  2) Ankara da calisani olan sirketlerin ID isim ve calisan sayilarini
+  listeleyiniz.
+----------------------------------------------------------------
+*/
+SELECT * FROM sirketler
+WHERE sirket IN ( SELECT sirket FROM calisanlar WHERE sehir = 'Ankara' );
+
+/*
+----------------------------------------------------------------
+  3) ID'si 101 den yuksek olan sirketlerde calisanlarin maas sehir
+  sirket ismini listeleyiniz.
+----------------------------------------------------------------
+*/
+SELECT sehir,maas,sirket FROM calisanlar
+WHERE sirket IN ( SELECT sirket FROM sirketler WHERE sirket_id > 101 );
+
+/*
+----------------------------------------------------------------
+  5) ID'si 100 olan sirketde calisanlarin maas ortalamasini listeleyiniz.
+----------------------------------------------------------------
+*/
 
 
 
