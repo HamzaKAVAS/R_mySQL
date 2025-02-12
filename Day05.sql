@@ -81,9 +81,22 @@ WHERE sirket IN ( SELECT sirket FROM sirketler WHERE sirket_id > 101 );
 
 /*
 ----------------------------------------------------------------
-  5) ID'si 100 olan sirketde calisanlarin maas ortalamasini listeleyiniz.
+  4) ID'si 100 olan sirketde calisanlarin maas ortalamasini listeleyiniz.
 ----------------------------------------------------------------
 */
+SELECT AVG(maas) AS Calisanlarin_maas_ortalaması FROM calisanlar
+WHERE sirket IN ( SELECT sirket FROM sirketler WHERE sirket_id = 100 );
+
+/*
+----------------------------------------------------------------
+ SORU 1- Her sirketin ismini, personel sayisini ve personelin 
+ ortalama maasini listeleyen bir QUERY yazin.
+----------------------------------------------------------------
+*/
+SELECT sirket,calisanlar_sayisi,(SELECT AVG(maas) FROM calisanlar WHERE sirketler.sirket = calisanlar.sirket)
+AS Personel_Ortalama_Maas
+FROM sirketler;
+
 
 
 
