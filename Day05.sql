@@ -183,6 +183,25 @@ INSERT INTO nisan_satislar VALUES (20, 'Mine', 'Toyota');
 SELECT * FROM mayis_satislar;
 SELECT * FROM nisan_satislar;
 
+/*
+----------------------------------------------------------------
+SORU 1 : Her iki ayda da ayni id ile satilan urunlerin urun_id'lerini
+ve urunleri mayis ayinda alanlarin isimlerini getiren bir query yaziniz.
+----------------------------------------------------------------
+*/
+SELECT urun_id,musteri_isim FROM mayis_satislar
+WHERE urun_id IN ( SELECT urun_id FROM nisan_satislar WHERE nisan_satislar.urun_id = mayis_satislar.urun_id)
+ORDER BY urun_id,musteri_isim;
+
+SELECT urun_id,musteri_isim FROM mayis_satislar
+WHERE EXISTS ( SELECT urun_id FROM nisan_satislar WHERE nisan_satislar.urun_id = mayis_satislar.urun_id)
+ORDER BY urun_id,musteri_isim;
+
+-- ============================================================================================================================
+
+
+
+
 
 
 
