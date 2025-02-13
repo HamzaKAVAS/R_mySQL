@@ -120,7 +120,7 @@ WHERE sirket_id > 101;
 
 /*
 ----------------------------------------------------------------
-SORU 3- Her sirketin id'sini, ismini ve toplam kac sehirde
+SORU 4- Her sirketin id'sini, ismini ve toplam kac sehirde
 bulundugunu listeleyen bir QUERY yaziniz.
 ----------------------------------------------------------------
 */
@@ -130,7 +130,7 @@ FROM sirketler;
 
 /*
 ----------------------------------------------------------------
-SORU 4- ID'si 101'den buyuk olan sirketlerin id'sini, ismini ve
+SORU 5- ID'si 101'den buyuk olan sirketlerin id'sini, ismini ve
 toplam kac sehirde bulundugunu listeleyen bir QUERY yaziniz.
 ----------------------------------------------------------------
 */
@@ -141,7 +141,7 @@ WHERE sirket_id > 101;
 
 /*
 ----------------------------------------------------------------
-SORU 5- Her sirketin ismini,personel sayisini ve personelin
+SORU 6- Her sirketin ismini,personel sayisini ve personelin
 aldigi max. ve min. maasi listeleyen bir QUERY yazin.
 ----------------------------------------------------------------
 */
@@ -199,6 +199,24 @@ ORDER BY urun_id,musteri_isim;
 
 -- ============================================================================================================================
 
+CREATE TABLE firmalar(
+id INT,
+isim VARCHAR(30),
+iletisim_isim VARCHAR(30),
+CONSTRAINT id_isim_pk
+PRIMARY KEY(id,isim)
+);
+
+INSERT INTO firmalar VALUES
+(1, 'ACB', 'Ali Can'), 
+(2, 'RDB', 'Veli Gul'), 
+(3, 'KMN', 'Ayse Gulmez');
+
+SELECT * FROM firmalar;
+
+-- Id'si 3 olan firmanin ismini 'KRM' olarak guncelleyiniz
+UPDATE firmalar SET isim = 'KRM'
+WHERE id = 3;
 
 
 
