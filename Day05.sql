@@ -139,7 +139,49 @@ AS Kaç_sehirde_bulunduğu_sayı
 FROM sirketler
 WHERE sirket_id > 101;
 
+/*
+----------------------------------------------------------------
+SORU 5- Her sirketin ismini,personel sayisini ve personelin
+aldigi max. ve min. maasi listeleyen bir QUERY yazin.
+----------------------------------------------------------------
+*/
+SELECT sirket,calisanlar_sayisi,(SELECT MAX(maas) FROM calisanlar WHERE calisanlar.sirket = sirketler.sirket)
+AS max_maas,
+(SELECT MIN(maas) FROM calisanlar WHERE calisanlar.sirket = sirketler.sirket)
+AS min_maas
+FROM sirketler;
 
+-- ============================================================================================================================
+
+CREATE TABLE mayis_satislar(
+urun_id int,
+musteri_isim varchar(50),
+urun_isim varchar(50)
+);
+
+INSERT INTO mayis_satislar VALUES (10, 'Mark', 'Honda');
+INSERT INTO mayis_satislar VALUES (10, 'Mark', 'Honda');
+INSERT INTO mayis_satislar VALUES (20, 'John', 'Toyota');
+INSERT INTO mayis_satislar VALUES (30, 'Amy', 'Ford');
+INSERT INTO mayis_satislar VALUES (20, 'Mark', 'Toyota');
+INSERT INTO mayis_satislar VALUES (10, 'Adem', 'Honda');
+INSERT INTO mayis_satislar VALUES (40, 'John', 'Hyundai');
+INSERT INTO mayis_satislar VALUES (20, 'Eddie', 'Toyota');
+
+CREATE TABLE nisan_satislar(
+urun_id int,
+musteri_isim varchar(50),
+urun_isim varchar(50)
+);
+
+INSERT INTO nisan_satislar VALUES (10, 'Hasan', 'Honda');
+INSERT INTO nisan_satislar VALUES (10, 'Kemal', 'Honda');
+INSERT INTO nisan_satislar VALUES (20, 'Ayse', 'Toyota');
+INSERT INTO nisan_satislar VALUES (50, 'Yasar', 'Volvo');
+INSERT INTO nisan_satislar VALUES (20, 'Mine', 'Toyota');
+
+SELECT * FROM mayis_satislar;
+SELECT * FROM nisan_satislar;
 
 
 
