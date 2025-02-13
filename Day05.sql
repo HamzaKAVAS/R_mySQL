@@ -97,6 +97,39 @@ SELECT sirket,calisanlar_sayisi,(SELECT AVG(maas) FROM calisanlar WHERE sirketle
 AS Personel_Ortalama_Maas
 FROM sirketler;
 
+/*
+----------------------------------------------------------------
+SORU 2- Her sirketin ismini ve personelin aldigi max. maasi
+listeleyen bir QUERY yazin.
+----------------------------------------------------------------
+*/
+SELECT sirket,(SELECT MAX(maas) FROM calisanlar WHERE calisanlar.sirket = sirketler.sirket)
+AS Her_sirketteki_personelin_max_maasi
+FROM sirketler;
+
+/*
+----------------------------------------------------------------
+SORU 3- id'si 101'den büyük sirketlerin ismini ve personelin aldigi max. maasi
+listeleyen bir QUERY yazin.
+----------------------------------------------------------------
+*/
+SELECT sirket,(SELECT MAX(maas) FROM calisanlar WHERE calisanlar.sirket = sirketler.sirket)
+AS Her_sirketteki_personelin_max_maasi
+FROM sirketler
+WHERE sirket_id > 101;
+
+/*
+----------------------------------------------------------------
+SORU 3- Her sirketin id'sini, ismini ve toplam kac sehirde
+bulundugunu listeleyen bir QUERY yaziniz.
+----------------------------------------------------------------
+*/
+SELECT sirket_id,sirket,(SELECT COUNT(sehir) FROM calisanlar WHERE calisanlar.sirket = sirketler.sirket)
+AS Kaç_sehirde_bulunduğu_sayı
+FROM sirketler;
+
+
+
 
 
 
