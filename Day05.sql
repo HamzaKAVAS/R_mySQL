@@ -218,6 +218,17 @@ SELECT * FROM firmalar;
 UPDATE firmalar SET isim = 'KRM'
 WHERE id = 3;
 
+-- Iletisim ismi Veli Gul olan firmanin id'sini 4, ismini FDS olarak guncelleyiniz.
+UPDATE firmalar SET id = 4 , isim = 'FDS'
+WHERE iletisim_isim = 'Veli Gul';
+
+-- Ismi ACB olan firmanin iletisim ismini 'Osman Can' olarak guncelleyiniz.
+UPDATE firmalar SET iletisim_isim = 'Osman Can'
+WHERE isim = 'ACB';
+
+-- ============================================================================================================================
+
+
 
 
 
