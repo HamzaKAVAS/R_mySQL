@@ -128,6 +128,17 @@ SELECT sirket_id,sirket,(SELECT COUNT(sehir) FROM calisanlar WHERE calisanlar.si
 AS Kaç_sehirde_bulunduğu_sayı
 FROM sirketler;
 
+/*
+----------------------------------------------------------------
+SORU 4- ID'si 101'den buyuk olan sirketlerin id'sini, ismini ve
+toplam kac sehirde bulundugunu listeleyen bir QUERY yaziniz.
+----------------------------------------------------------------
+*/
+SELECT sirket_id,sirket,(SELECT COUNT(sehir) FROM calisanlar WHERE calisanlar.sirket = sirketler.sirket)
+AS Kaç_sehirde_bulunduğu_sayı
+FROM sirketler
+WHERE sirket_id > 101;
+
 
 
 
