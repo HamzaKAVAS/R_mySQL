@@ -281,7 +281,10 @@ WHERE musteri_isim = 'Ali Can';
 UPDATE urun SET musteri_isim = (SELECT irtibat FROM tedarik WHERE isim = 'IBM')
 WHERE urun_ismi = 'TV';
 
-
+-- urun id'si 1001 olan urun ismini, id'si 102 olan
+-- sirketin ismi ile degistirin.
+UPDATE urun SET urun_ismi = (SELECT isim FROM tedarik WHERE id = 102)
+WHERE urun_id = 1001;
 
 
 
