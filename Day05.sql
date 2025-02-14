@@ -276,6 +276,13 @@ sirketin ismi ile degistirin. */
 UPDATE urun SET urun_ismi = (SELECT isim FROM tedarik WHERE irtibat = 'Merve Temiz')
 WHERE musteri_isim = 'Ali Can';
 
+-- Urun tablosundaki TV satin alan musterinin ismini,
+-- tedarik tablosundaki IBM'in irtibat'i ile degistirin.
+UPDATE urun SET musteri_isim = (SELECT irtibat FROM tedarik WHERE isim = 'IBM')
+WHERE urun_ismi = 'TV';
+
+
+
 
 
 
