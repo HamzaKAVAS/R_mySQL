@@ -330,8 +330,12 @@ SELECT * FROM puanlar;
 -- Tum cocuklarin gradelerini puanlar tablosundaki
 -- yazili_notu ile update edin.
 UPDATE cocuklar 
-SET grade = (SELECT yazili_notu FROM puanlar WHERE puanlar.ogrenci_id = cocuklar.id );
+SET grade = (SELECT yazili_notu FROM puanlar WHERE puanlar.ogrenci_id = cocuklar.id);
 
+-- Tum cocuklarin veli isimlerini puanlar tablosundaki
+-- ders_adi ile update edin.
+UPDATE cocuklar
+SET veli_isim = (SELECT ders_adi FROM puanlar WHERE puanlar.ogrenci_id = cocuklar.id);
 
 
 
