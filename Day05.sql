@@ -265,6 +265,11 @@ INSERT INTO urun VALUES(103, 1004,'Phone', 'Ali Can');
 SELECT * FROM tedarik;
 SELECT * FROM urun;
 
+-- 'LG' firmasinda calisan 'Ali Can'in ismini 'Veli Can'
+-- olarak degistiriniz.
+UPDATE tedarik SET irtibat = 'Veli Can'
+WHERE isim = 'LG';
+
 
 
 
