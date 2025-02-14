@@ -327,6 +327,12 @@ INSERT INTO puanlar VALUES ('129','fizik',25);
 SELECT * FROM cocuklar;
 SELECT * FROM puanlar;
 
+-- Tum cocuklarin gradelerini puanlar tablosundaki
+-- yazili_notu ile update edin.
+UPDATE cocuklar 
+SET grade = (SELECT yazili_notu FROM puanlar WHERE puanlar.ogrenci_id = cocuklar.id );
+
+
 
 
 
