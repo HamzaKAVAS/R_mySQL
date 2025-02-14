@@ -227,7 +227,43 @@ UPDATE firmalar SET iletisim_isim = 'Osman Can'
 WHERE isim = 'ACB';
 
 -- ============================================================================================================================
+use hamzadeneme;
 
+-- id, isim ve irtibat fieldlarinin oldugu bir tedarik tablosu olusturun.
+-- id field'ini Primary Key yapin.
+CREATE TABLE tedarik(
+id INT,
+isim VARCHAR(30),
+irtibat VARCHAR(30),
+CONSTRAINT id_pk PRIMARY KEY(id)
+);
+
+-- tedarikci_id, urun_id, urun_ismi, musteri_isim fieldlari olan urun
+-- tablosu olusturun
+-- Bu tablodaki tedarikci_id fieldinin tedarik tablosunun PK si ile
+-- Foreign Key baglantisini kurun
+CREATE TABLE urun(
+tedarikci_id INT,
+urun_id INT,
+urun_ismi VARCHAR(30),
+musteri_isim VARCHAR(30),
+CONSTRAINT td_id_fk
+FOREIGN KEY(tedarikci_id)
+REFERENCES tedarik(id)
+);
+
+INSERT INTO tedarik VALUES(100, 'IBM', 'Ali Can');
+INSERT INTO tedarik VALUES(101, 'APPLE', 'Merve Temiz');
+INSERT INTO tedarik VALUES(102, 'SAMSUNG', 'Kemal Can');
+INSERT INTO tedarik VALUES(103, 'LG', 'Ali Can');
+
+INSERT INTO urun VALUES(100, 1001,'Laptop', 'Suleyman');
+INSERT INTO urun VALUES(101, 1002,'iPad', 'Fatma');
+INSERT INTO urun VALUES(102, 1003,'TV', 'Ramazan');
+INSERT INTO urun VALUES(103, 1004,'Phone', 'Ali Can');
+
+SELECT * FROM tedarik;
+SELECT * FROM urun;
 
 
 
