@@ -270,6 +270,12 @@ SELECT * FROM urun;
 UPDATE tedarik SET irtibat = 'Veli Can'
 WHERE isim = 'LG';
 
+/*  Urun tablosundan Ali Can'in aldigi urunun ismini,
+tedarik tablosunda irtibat Merve Temiz olan
+sirketin ismi ile degistirin. */
+UPDATE urun SET urun_ismi = (SELECT isim FROM tedarik WHERE irtibat = 'Merve Temiz')
+WHERE musteri_isim = 'Ali Can';
+
 
 
 
