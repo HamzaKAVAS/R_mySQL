@@ -286,6 +286,10 @@ WHERE urun_ismi = 'TV';
 UPDATE urun SET urun_ismi = (SELECT isim FROM tedarik WHERE id = 102)
 WHERE urun_id = 1001;
 
+-- urun tablosuna 104,1005,Huawei,Ruya Koca kaydını ekleyin
+INSERT INTO tedarik() VALUES (104,'HUAWEI','Mehmet Can');
+INSERT INTO urun() VALUES (104,1005,'HUAWEI','Rüya Koca');
+
 
 
 
