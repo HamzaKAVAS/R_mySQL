@@ -30,3 +30,6 @@ WHERE veli_isim LIKE ('___%');
 DELETE FROM kursiyer
 WHERE veli_isim = 'Hasan';
 
+-- geri dönmek için;
+ROLLBACK TO AKSAM;
+
