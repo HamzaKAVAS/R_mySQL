@@ -22,3 +22,7 @@ SAVEPOINT AKSAM;
 UPDATE kursiyer SET yazili_notu = yazili_notu + 5
 WHERE isim LIKE ('%a%');
 
+-- veli ismi 3 harften fazla olanlardan 3 puan silin
+UPDATE kursiyer SET yazili_notu = yazili_notu - 3
+WHERE veli_isim LIKE ('___%');
+
