@@ -26,3 +26,7 @@ WHERE isim LIKE ('%a%');
 UPDATE kursiyer SET yazili_notu = yazili_notu - 3
 WHERE veli_isim LIKE ('___%');
 
+-- veli ismi Hasan olan ogrenciyi silin
+DELETE FROM kursiyer
+WHERE veli_isim = 'Hasan';
+
