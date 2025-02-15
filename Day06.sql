@@ -15,3 +15,10 @@ INSERT INTO kursiyer VALUES(125, 'Kemal Yasa', 'Ali',85);
 
 SELECT * FROM kursiyer;
 
+-- verileri database'e ilk olarak yedekle
+SAVEPOINT AKSAM;
+
+-- isminde a harfi olan ogrencilerin yazılı notunu 5 arttırın
+UPDATE kursiyer SET yazili_notu = yazili_notu + 5
+WHERE isim LIKE ('%a%');
+
