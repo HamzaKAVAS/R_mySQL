@@ -39,3 +39,12 @@ ROLLBACK TO AKSAM;
 -- SAVEPOINT ile kaydedilmeyecegi icin
 -- ROLLBACK TO komutu ile geri getirilemez.
 
+/*
+   TRUNCATE komutu kayıtları geri getirilemeyecek sekilde siler.
+*/
+
+-- kursiyer tablosundaki verileri TRUNCATE ile silin
+TRUNCATE kursiyer;
+
+ROLLBACK TO sabah; -- doesn't exist
+
