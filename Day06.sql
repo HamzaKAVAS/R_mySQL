@@ -33,3 +33,9 @@ WHERE veli_isim = 'Hasan';
 -- geri dönmek için;
 ROLLBACK TO AKSAM;
 
+-- SAVEPOINT calistirildigi anda ki guncel durumu dondurur ve o haliyle yedekler.
+-- Tekrar ROLLBACK TO komutu ile cagirildiginda ise dondurdugu verileri getirir.
+-- Yani SAVEPOINT isleminden ROLLBACK islemine kadar yapilan hic bir islem
+-- SAVEPOINT ile kaydedilmeyecegi icin
+-- ROLLBACK TO komutu ile geri getirilemez.
+
