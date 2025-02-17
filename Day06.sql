@@ -72,3 +72,10 @@ FOREIGN KEY (talebe_id)
 REFERENCES talebeler(id) 
 );
 
+INSERT INTO dereceler VALUES
+        (123, 'Kimya', 75),
+        (124, 'Fizik', 65),
+        (125, 'Tarih', 90),
+        (126, 'Matematik', 90),
+        (127, 'Matematik', 23);
+
