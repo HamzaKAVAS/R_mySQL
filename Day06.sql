@@ -86,4 +86,7 @@ SELECT * FROM dereceler;
 DELETE FROM dereceler
 WHERE talebe_id > 125;
 
+DELETE FROM talebeler
+WHERE id > 125;
+
 
