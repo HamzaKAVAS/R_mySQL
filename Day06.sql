@@ -78,4 +78,6 @@ INSERT INTO dereceler VALUES
         (125, 'Tarih', 90),
         (126, 'Matematik', 90),
         (127, 'Matematik', 23);
+        
+SELECT * FROM talebeler;
 
