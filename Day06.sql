@@ -48,3 +48,11 @@ TRUNCATE kursiyer;
 
 ROLLBACK TO sabah; -- doesn't exist
 
+-- ============================================================================================================================================================
+CREATE TABLE talebeler(
+id CHAR(3) PRIMARY KEY,
+isim VARCHAR(50),
+veli_isim VARCHAR(50),
+yazili_notu INT
+);
+
