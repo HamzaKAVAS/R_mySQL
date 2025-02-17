@@ -63,3 +63,12 @@ INSERT INTO talebeler VALUES
         (126,'Nesıbe Yılmaz', 'Ayse', 95),
         (127,'Mustafa Bak', 'Can', 99);
 
+CREATE TABLE dereceler(
+talebe_id CHAR(3),
+ders_adi VARCHAR(30),
+yazili_notu INT,
+CONSTRAINT talebe_id_fk 
+FOREIGN KEY (talebe_id)
+REFERENCES talebeler(id) 
+);
+
