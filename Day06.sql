@@ -82,3 +82,8 @@ INSERT INTO dereceler VALUES
 SELECT * FROM talebeler;
 SELECT * FROM dereceler;
 
+-- Talebeler tablosundan id'si 125'den büyük olan dataları silin
+DELETE FROM dereceler
+WHERE talebe_id > 125;
+
+
