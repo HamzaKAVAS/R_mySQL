@@ -80,4 +80,5 @@ INSERT INTO dereceler VALUES
         (127, 'Matematik', 23);
         
 SELECT * FROM talebeler;
+SELECT * FROM dereceler;
 
