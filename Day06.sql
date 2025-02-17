@@ -56,3 +56,10 @@ veli_isim VARCHAR(50),
 yazili_notu INT
 );
 
+INSERT INTO talebeler VALUES
+        (123,'Ali Can', 'Hasan', 75),
+        (124,'Merve Gul', 'Ayse', 85),
+        (125,'Kemal Yasa', 'Hasan', 85),
+        (126,'Nesıbe Yılmaz', 'Ayse', 95),
+        (127,'Mustafa Bak', 'Can', 99);
+
