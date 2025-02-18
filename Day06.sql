@@ -109,6 +109,7 @@ REFERENCES talebeler(id) ON DELETE CASCADE
 );
 
 -- Talebeler tablosundan id'si 125'den büyük olan dataları silin
-
+DELETE FROM talebeler
+WHERE id > 125; -- otomatik parenttan sildi boylelikle child tablodan'da gitti.
 
 
