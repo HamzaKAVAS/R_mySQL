@@ -96,4 +96,6 @@ WHERE id > 125;
    Bunun icin FK olan satirin en sonuna ON DELETE CASCADE komutunu yazmak yeterli.
 */
 
+DROP TABLE dereceler;
+
 
