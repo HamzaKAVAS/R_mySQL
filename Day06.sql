@@ -108,4 +108,7 @@ CONSTRAINT talebe_id_fk FOREIGN KEY (talebe_id)
 REFERENCES talebeler(id) ON DELETE CASCADE
 );
 
+-- Talebeler tablosundan id'si 125'den büyük olan dataları silin
+
+
 
