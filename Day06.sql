@@ -99,4 +99,13 @@ WHERE id > 125;
 DROP TABLE dereceler;
 TRUNCATE talebeler;
 
+-- dereceler tablosunu yeniden olusturalım
+CREATE TABLE dereceler(
+talebe_id CHAR(3),
+ders_adi VARCHAR(30),
+yazili_notu INT,
+CONSTRAINT talebe_id_fk FOREIGN KEY (talebe_id)
+REFERENCES talebeler(id) ON DELETE CASCADE
+);
+
 
