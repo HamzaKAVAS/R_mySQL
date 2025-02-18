@@ -97,5 +97,6 @@ WHERE id > 125;
 */
 
 DROP TABLE dereceler;
+TRUNCATE talebeler;
 
 
