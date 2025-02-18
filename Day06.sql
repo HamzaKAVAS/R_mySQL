@@ -89,4 +89,11 @@ WHERE talebe_id > 125;
 DELETE FROM talebeler
 WHERE id > 125;
 
+-- -------------------ON DELETE CASCADE-------------
+/*
+   Her defasinda once child tablodaki verileri silmek yerine
+   ON DELETE CASCADE silme ozelligini aktif hale getirebiliriz.
+   Bunun icin FK olan satirin en sonuna ON DELETE CASCADE komutunu yazmak yeterli.
+*/
+
 
