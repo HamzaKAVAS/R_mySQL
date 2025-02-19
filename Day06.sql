@@ -116,6 +116,8 @@ WHERE id > 125; -- otomatik parenttan sildi boylelikle child tablodan'da gitti.
 USE hamzadeneme;
 
 SELECT * FROM nisan_satislar;
+SELECT * FROM mayis_satislar;
+
 
 
 
