@@ -144,6 +144,16 @@ INSERT INTO kadro VALUES(345678902, 'Mehmet Ozturk', 'Izmir', 3500,'Honda');
  
 SELECT * FROM kadro;
 
+-- 1) Honda ve Tofas'ta calisan benzersiz isimdeki personelleri listeleyin
+SELECT DISTINCT isim FROM kadro
+WHERE sirket IN ('Honda','Tofas');
+
+SELECT isim FROM kadro
+WHERE sirket = 'Honda'
+UNION
+SELECT isim FROM kadro
+WHERE sirket = 'Tofas';
+
 
 
 
