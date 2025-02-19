@@ -125,6 +125,15 @@ UNION
 SELECT musteri_isim FROM mayis_satislar
 WHERE urun_isim = 'Toyota';
 
+CREATE TABLE kadro(
+id int,
+isim varchar(50),
+sehir varchar(50),
+maas int,
+sirket varchar(20)
+);
+
+
 
 
 
