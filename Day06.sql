@@ -118,6 +118,14 @@ USE hamzadeneme;
 SELECT * FROM nisan_satislar;
 SELECT * FROM mayis_satislar;
 
+-- nisan veya mayıs'da Toyota alan müsterilerin isimleri
+SELECT musteri_isim FROM nisan_satislar
+WHERE urun_isim = 'Toyota'
+UNION
+SELECT musteri_isim FROM mayis_satislar
+WHERE urun_isim = 'Toyota';
+
+
 
 
 
