@@ -112,4 +112,7 @@ REFERENCES talebeler(id) ON DELETE CASCADE
 DELETE FROM talebeler
 WHERE id > 125; -- otomatik parenttan sildi boylelikle child tablodan'da gitti.
 
+-- ============================================================================================================================================================
+USE hamzadeneme;
+
 
