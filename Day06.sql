@@ -167,6 +167,10 @@ WHERE sirket = 'Ford';
 SELECT DISTINCT isim FROM kadro
 WHERE sirket IN ('Honda','Tofas','Ford');
 
+-- Maasi 4000'den fazla olan isci isimlerini ve 5000'den fazla
+-- maas alinan sehirleri ayni sutunda alt alta gosteren sorguyu yaziniz
+
+
 
 
 
