@@ -169,7 +169,11 @@ WHERE sirket IN ('Honda','Tofas','Ford');
 
 -- Maasi 4000'den fazla olan isci isimlerini ve 5000'den fazla
 -- maas alinan sehirleri ayni sutunda alt alta gosteren sorguyu yaziniz
-
+SELECT isim AS Isim_ve_Sehir FROM kadro
+WHERE maas > 4000
+UNION
+SELECT sehir FROM kadro
+WHERE maas > 5000;
 
 
 
