@@ -154,6 +154,9 @@ UNION
 SELECT isim FROM kadro
 WHERE sirket = 'Tofas';
 
+-- 2) Honda, Ford ve Tofas'ta calisan benzersiz isimdeki personelleri listeleyin
+
+
 
 
 
