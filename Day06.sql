@@ -164,6 +164,9 @@ UNION
 SELECT isim FROM kadro
 WHERE sirket = 'Ford';
 
+SELECT DISTINCT isim FROM kadro
+WHERE sirket IN ('Honda','Tofas','Ford');
+
 
 
 
