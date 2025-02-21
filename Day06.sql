@@ -189,6 +189,13 @@ sirket_id INT ,
 sirket_isim VARCHAR(20)
 );
 
+INSERT INTO sirket VALUES(100, 'Toyota');
+INSERT INTO sirket VALUES(101, 'Honda');
+INSERT INTO sirket VALUES(102, 'Ford');
+INSERT INTO sirket VALUES(103, 'Hyundai');
+
+SELECT * FROM sirket;
+
 
 
 
