@@ -175,6 +175,10 @@ UNION
 SELECT sehir FROM kadro
 WHERE maas > 5000;
 
+-- 5000'den az maas alanlarin , buna ek olarak Honda calisani olmayanlarin
+-- isim bilgilerini listeleyiniz.
+
+
 
 
 
