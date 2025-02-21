@@ -183,6 +183,12 @@ UNION
 SELECT isim FROM kadro
 WHERE sirket != 'Honda';
 
+-- ============================================================================================================================================================
+CREATE TABLE sirket (
+sirket_id INT , 
+sirket_isim VARCHAR(20)
+);
+
 
 
 
