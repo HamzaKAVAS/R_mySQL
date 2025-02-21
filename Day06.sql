@@ -202,6 +202,14 @@ sirket_id INT,
 siparis_tarihi DATE
 );
 
+INSERT INTO siparisler VALUES(11, 101, '2020-04-17');
+INSERT INTO siparisler VALUES(22, 102, '2020-04-18');
+INSERT INTO siparisler VALUES(33, 103, '2020-04-19');
+INSERT INTO siparisler VALUES(44, 104, '2020-04-20');
+INSERT INTO siparisler VALUES(55, 105, '2020-04-21'); 
+
+SELECT * FROM siparisler;
+
 
 
 
