@@ -196,6 +196,12 @@ INSERT INTO sirket VALUES(103, 'Hyundai');
 
 SELECT * FROM sirket;
 
+CREATE TABLE siparisler    (
+siparis_id INT,
+sirket_id INT, 
+siparis_tarihi DATE
+);
+
 
 
 
