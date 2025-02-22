@@ -210,6 +210,10 @@ INSERT INTO siparisler VALUES(55, 105, '2020-04-21');
 
 SELECT * FROM siparisler;
 
+-- Iki Tabloda sirket_id'si ayni olanlarin sirket_ismi, siparis_id ve 
+-- siparis_tarihleri listeleyen bir sorgu yaziniz.
+
+
 
 
 
