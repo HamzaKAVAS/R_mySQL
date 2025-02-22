@@ -216,6 +216,13 @@ SELECT sir.sirket_isim,sip.siparis_id,sip.siparis_tarihi
 FROM siparisler sip INNER JOIN sirket sir
 ON sip.sirket_id = sir.sirket_id;
 
+/* -----------------------------------------------------------------------------
+  ORNEK2: sirket tablosundaki tum sirketleri ve bu sirketlere ait olan 
+  siparis_id ve siparis_tarihleri listeleyen bir sorgu yaziniz.
+------------------------------------------------------------------------------*/
+
+
+
 
 
 
