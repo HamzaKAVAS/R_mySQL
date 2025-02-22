@@ -212,6 +212,9 @@ SELECT * FROM siparisler;
 
 -- Iki Tabloda sirket_id'si ayni olanlarin sirket_ismi, siparis_id ve 
 -- siparis_tarihleri listeleyen bir sorgu yaziniz.
+SELECT sir.sirket_isim,sip.siparis_id,sip.siparis_tarihi
+FROM siparisler sip INNER JOIN sirket sir
+ON sip.sirket_id = sir.sirket_id;
 
 
 
