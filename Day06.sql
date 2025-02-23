@@ -235,7 +235,10 @@ ON sip.sirket_id = sir.sirket_id;
 SELECT sir.sirket_isim,sir.sirket_isim,sip.siparis_id,sip.siparis_tarihi
 FROM sirket sir LEFT JOIN siparisler sip
 ON sip.sirket_id = sir.sirket_id
-
+UNION
+SELECT sir.sirket_isim,sir.sirket_isim,sip.siparis_id,sip.siparis_tarihi
+FROM sirket sir RIGHT JOIN siparisler sip
+ON sip.sirket_id = sir.sirket_id;
 
 
 
