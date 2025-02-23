@@ -232,6 +232,9 @@ ON sip.sirket_id = sir.sirket_id;
 
 -- sirket ve siparisler adindaki tablolarda yer alan sirket_id, 
 -- sirket_isim, siparis_id ve siparis_tarihleri'ni listeleyen bir query yaziniz
+SELECT sir.sirket_isim,sir.sirket_isim,sip.siparis_id,sip.siparis_tarihi
+FROM sirket sir LEFT JOIN siparisler sip
+ON sip.sirket_id = sir.sirket_id
 
 
 
