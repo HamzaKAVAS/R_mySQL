@@ -255,6 +255,17 @@ INSERT INTO bolumler VALUES (40,'ISLETME','BURSA');
 INSERT INTO bolumler VALUES (50,'DEPO', 'YOZGAT');
 INSERT INTO bolumler VALUES (60,'SATIS', 'CORUM');
 
+CREATE TABLE personeller (
+personel_id   INT ,
+personel_isim VARCHAR(10),
+meslek        VARCHAR(9),
+mudur_id      INT,
+maas          INT,
+bolum_id      INT,
+CONSTRAINT bolumID_fk FOREIGN KEY(bolum_id)
+REFERENCES bolumler(bolum_id)
+);
+
 
 
 
