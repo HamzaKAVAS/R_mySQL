@@ -240,6 +240,14 @@ SELECT sir.sirket_isim,sir.sirket_isim,sip.siparis_id,sip.siparis_tarihi
 FROM sirket sir RIGHT JOIN siparisler sip
 ON sip.sirket_id = sir.sirket_id;
 
+-- ==============================================================================================
+
+CREATE TABLE bolumler (
+bolum_id   INT PRIMARY KEY,
+bolum_isim VARCHAR(14),
+konum      VARCHAR(13)
+);
+
 
 
 
