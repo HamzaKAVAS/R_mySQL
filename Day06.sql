@@ -288,6 +288,11 @@ SELECT * FROM personeller;
 
 -- SATIS ve MUHASEBE bolumlerinde calisanlarin isimlerini ve 
 -- bolumlerini, once bolum sonra isim sirali olarak listeleyiniz
+SELECT p.personel_isim,b.bolum_isim
+FROM bolumler b JOIN personeller p 
+ON b.bolum_id = p.bolum_id  
+WHERE b.bolum_isim IN ('SATIS','MUHASEBE')
+ORDER BY b.bolum_isim,p.personel_isim;
 
 
 
