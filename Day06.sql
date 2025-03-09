@@ -286,6 +286,9 @@ INSERT INTO personeller VALUES (7933,'ZEKI','MUHENDIS',1333,4300,60);
 SELECT * FROM bolumler;
 SELECT * FROM personeller;
 
+-- SATIS ve MUHASEBE bolumlerinde calisanlarin isimlerini ve 
+-- bolumlerini, once bolum sonra isim sirali olarak listeleyiniz
+
 
 
 
