@@ -294,6 +294,12 @@ ON b.bolum_id = p.bolum_id
 WHERE b.bolum_isim IN ('SATIS','MUHASEBE')
 ORDER BY b.bolum_isim,p.personel_isim;
 
+/*
+  SATIS, ISLETME ve DEPO bolumlerinde calisanlarin isimlerini ve
+  bolumlerini isim sirali olarak listeleyiniz
+  NOT: Calisani olmasa bile bolum ismi listelenmelidir.
+*/
+
 
 
 
