@@ -299,6 +299,11 @@ ORDER BY b.bolum_isim,p.personel_isim;
   bolumlerini isim sirali olarak listeleyiniz
   NOT: Calisani olmasa bile bolum ismi listelenmelidir.
 */
+SELECT p.personel_isim,b.bolum_isim
+FROM bolumler b LEFT JOIN personeller p 
+ON b.bolum_id = p.bolum_id  
+WHERE b.bolum_isim IN ('SATIS','ISLETME','DEPO')
+ORDER BY b.bolum_isim,p.personel_isim;
 
 
 
